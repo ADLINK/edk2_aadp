@@ -109,6 +109,11 @@
   PcieBoardLib|Platform/Ampere/ComHpcAltPkg/Library/PcieBoardLib/PcieBoardLib.inf
 
   #
+  # Boot Maintenance Manager Ui Library
+  #
+  BootMaintenanceManagerUiLib|Platform/Ampere/ComHpcAltPkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf
+
+  #
   # EFI Redfish drivers
   #
 !if $(REDFISH_ENABLE) == TRUE

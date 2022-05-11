@@ -27,7 +27,7 @@
 
 // Type0 Data
 #define VENDOR_TEMPLATE       "ADLINK\0"
-#define BIOS_VERSION_TEMPLATE "1.07.300.04 Build 20220119\0"
+#define BIOS_VERSION_TEMPLATE "1.07.300.05\0"
 #define RELEASE_DATE_TEMPLATE "MM/DD/YYYY\0"
 
 #define TYPE0_ADDITIONAL_STRINGS                    \
@@ -37,7 +37,7 @@
 
 // Type1 Data
 #define MANUFACTURER_TEMPLATE "ADLINK\0"
-#define PRODUCT_NAME_TEMPLATE "AVA Developer Platform\0"
+#define PRODUCT_NAME_TEMPLATE "AVA-AP1\0"
 #define SERIAL_TEMPLATE       "123456789ABCDEFF123456789ABCDEFF\0"
 #define SKU_TEMPLATE          "FEDCBA9876543211FEDCBA9876543211\0"
 #define FAMILY_TEMPLATE       "Altra\0"
@@ -45,22 +45,22 @@
 #define TYPE1_ADDITIONAL_STRINGS                  \
   MANUFACTURER_TEMPLATE /* Manufacturer */  \
   PRODUCT_NAME_TEMPLATE /* Product Name */  \
-  "A1\0"  		/* Version */        \
+  "ES1\0"  		/* Version */        \
   SERIAL_TEMPLATE       /* Serial Number */ \
   SKU_TEMPLATE          /* SKU Number */    \
   FAMILY_TEMPLATE       /* Family */	    \
-  "A2\0"                /* Version */        \
-  "A3\0"                /* Version */        \
+  "ES2\0"                /* Version */        \
+  "ES3\0"                /* Version */        \
   "None\0"              /* Version */
 
 #define TYPE2_ADDITIONAL_STRINGS                   \
   MANUFACTURER_TEMPLATE /* Manufacturer */   \
   PRODUCT_NAME_TEMPLATE /* Product Name */   \
-  "A1\0"  		/* Version */        \
+  "ES1\0"  		/* Version */        \
   "Serial Not Set\0"    /* Serial */         \
   "Base of Chassis\0"   /* board location */ \
-  "A2\0"                /* Version */        \
-  "A3\0"                /* Version */        \
+  "ES2\0"                /* Version */        \
+  "ES3\0"                /* Version */        \
   "None\0"              /* Version */
 
 #define CHASSIS_VERSION_TEMPLATE    "None               \0"
