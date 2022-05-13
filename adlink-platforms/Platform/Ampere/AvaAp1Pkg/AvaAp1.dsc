@@ -12,15 +12,15 @@
 #
 ################################################################################
 [Defines]
-  PLATFORM_NAME                  = ComHpcAlt
-  PLATFORM_GUID                  = A4365AA5-0696-4E90-BB5A-ABC1BF6BFAB0
+  PLATFORM_NAME                  = AvaAp1
+  PLATFORM_GUID                  = 7787CE84-03ED-444E-9E0F-F8A99C865951
   PLATFORM_VERSION               = 0.1
   DSC_SPECIFICATION              = 0x0001001B
-  OUTPUT_DIRECTORY               = Build/ComHpcAlt
+  OUTPUT_DIRECTORY               = Build/AvaAp1
   SUPPORTED_ARCHITECTURES        = AARCH64
   BUILD_TARGETS                  = DEBUG|RELEASE|NOOPT
   SKUID_IDENTIFIER               = DEFAULT
-  FLASH_DEFINITION               = Platform/Ampere/ComHpcAltPkg/ComHpcAlt.fdf
+  FLASH_DEFINITION               = Platform/Ampere/AvaAp1Pkg/AvaAp1.fdf
 
   #
   # Defines for default states. These can be changed on the command line.
@@ -53,7 +53,7 @@
   DEFINE SECURE_BOOT_ENABLE      = FALSE
   DEFINE TPM2_ENABLE             = TRUE
   DEFINE INCLUDE_TFTP_COMMAND    = TRUE
-  DEFINE PLATFORM_CONFIG_UUID    = 21A80447-B2DD-4D8C-BCA2-04305F025EA4
+  DEFINE PLATFORM_CONFIG_UUID    = D614AE99-1C1B-4AFD-9FB3-ABB7FDCCF6CC
 
   #
   # Network definition
@@ -105,12 +105,12 @@
   #
   # Pcie Board
   #
-  BoardPcieLib|Platform/Ampere/ComHpcAltPkg/Library/BoardPcieLib/BoardPcieLib.inf
+  BoardPcieLib|adlink-platforms/Library/BoardPcieLib/BoardPcieLib.inf
 
   #
   # Boot Maintenance Manager Ui Library
   #
-  BootMaintenanceManagerUiLib|Platform/Ampere/ComHpcAltPkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf
+  BootMaintenanceManagerUiLib|Platform/Ampere/AvaAp1Pkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf
 
   #
   # Library for POST Code converting
@@ -131,7 +131,7 @@
   #
   # RTC Library: Common RTC
   #
-  RealTimeClockLib|Platform/Ampere/ComHpcAltPkg/Library/PCF8563RealTimeClockLib/PCF8563RealTimeClockLib.inf
+  RealTimeClockLib|Library/PCF8563RealTimeClockLib/PCF8563RealTimeClockLib.inf
 
 [LibraryClasses.common.UEFI_DRIVER, LibraryClasses.common.UEFI_APPLICATION, LibraryClasses.common.DXE_RUNTIME_DRIVER, LibraryClasses.common.DXE_DRIVER]
   SmbusLib|Platform/Ampere/JadePkg/Library/DxePlatformSmbusLib/DxePlatformSmbusLib.inf
@@ -239,7 +239,7 @@
   }
   Platform/Ampere/JadePkg/Drivers/AcpiPlatformDxe/AcpiPlatformDxe.inf
   Silicon/Ampere/AmpereAltraPkg/AcpiCommonTables/AcpiCommonTables.inf
-  Platform/Ampere/ComHpcAltPkg/AcpiTables/AcpiTables.inf
+  Platform/Ampere/AvaAp1Pkg/AcpiTables/AcpiTables.inf
   Platform/Ampere/JadePkg/Ac02AcpiTables/Ac02AcpiTables.inf
 
   #
@@ -263,7 +263,7 @@
   # SMBIOS
   #
   MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
-  Platform/Ampere/ComHpcAltPkg/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
+  Platform/Ampere/AvaAp1Pkg/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
   Platform/Ampere/JadePkg/Drivers/SmbiosCpuDxe/SmbiosCpuDxe.inf
   Platform/Ampere/JadePkg/Drivers/SmbiosMemInfoDxe/SmbiosMemInfoDxe.inf
 

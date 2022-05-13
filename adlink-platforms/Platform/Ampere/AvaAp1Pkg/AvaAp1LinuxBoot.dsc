@@ -12,15 +12,15 @@
 #
 ################################################################################
 [Defines]
-  PLATFORM_NAME                  = ComHpcAlt
+  PLATFORM_NAME                  = AvaAp1
   PLATFORM_GUID                  = BDFD62FB-6372-4475-92D0-7DA694395449
   PLATFORM_VERSION               = 0.1
   DSC_SPECIFICATION              = 0x0001001B
-  OUTPUT_DIRECTORY               = Build/ComHpcAlt
+  OUTPUT_DIRECTORY               = Build/AvaAp1
   SUPPORTED_ARCHITECTURES        = AARCH64
   BUILD_TARGETS                  = DEBUG|RELEASE
   SKUID_IDENTIFIER               = DEFAULT
-  FLASH_DEFINITION               = Platform/Ampere/ComHpcAltPkg/ComHpcAltLinuxBoot.fdf
+  FLASH_DEFINITION               = Platform/Ampere/AvaAp1Pkg/AvaAp1LinuxBoot.fdf
 
   #
   # Defines for default states.  These can be changed on the command line.
@@ -48,13 +48,13 @@
   #
   # Pcie Board
   #
-  BoardPcieLib|Platform/Ampere/ComHpcAltPkg/Library/BoardPcieLib/BoardPcieLib.inf
+  BoardPcieLib|Library/BoardPcieLib/BoardPcieLib.inf
 
 [LibraryClasses.common.DXE_RUNTIME_DRIVER]
   #
   # RTC Library: Common RTC
   #
-  RealTimeClockLib|Platform/Ampere/ComHpcAltPkg/Library/PCF8563RealTimeClockLib/PCF8563RealTimeClockLib.inf
+  RealTimeClockLib|Library/PCF8563RealTimeClockLib/PCF8563RealTimeClockLib.inf
 
 [LibraryClasses.common.UEFI_DRIVER, LibraryClasses.common.UEFI_APPLICATION, LibraryClasses.common.DXE_RUNTIME_DRIVER, LibraryClasses.common.DXE_DRIVER]
   SmbusLib|Platform/Ampere/JadePkg/Library/DxePlatformSmbusLib/DxePlatformSmbusLib.inf
@@ -86,14 +86,14 @@
   MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
   Platform/Ampere/JadePkg/Drivers/AcpiPlatformDxe/AcpiPlatformDxe.inf
   Silicon/Ampere/AmpereAltraPkg/AcpiCommonTables/AcpiCommonTables.inf
-  Platform/Ampere/ComHpcAltPkg/AcpiTables/AcpiTables.inf
+  Platform/Ampere/AvaAp1Pkg/AcpiTables/AcpiTables.inf
   Platform/Ampere/JadePkg/Ac02AcpiTables/Ac02AcpiTables.inf
 
   #
   # SMBIOS
   #
   MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
-  Platform/Ampere/ComHpcAltPkg/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
+  Platform/Ampere/AvaAp1Pkg/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
   Platform/Ampere/JadePkg/Drivers/SmbiosCpuDxe/SmbiosCpuDxe.inf
   Platform/Ampere/JadePkg/Drivers/SmbiosMemInfoDxe/SmbiosMemInfoDxe.inf
 

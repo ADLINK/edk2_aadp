@@ -2,7 +2,7 @@
 OPATH=$PATH
 . edk2.sh
 OEM_SRC_DIR=$WORKSPACE/adlink-platforms
-BOARD_NAME=ComHpcAlt
+BOARD_NAME=AvaAp1
 EDK2_PLATFORMS_PKG_DIR=$OEM_SRC_DIR/Platform/Ampere/"$BOARD_NAME"Pkg
 #
 # specify the BOARD stepping here
@@ -16,11 +16,11 @@ PROGRAMMER_TOOL=#$OEM_SRC_DIR/toolchain/dpcmd
 if  [ "${BOARD_STEPPING}" == "A1" ]; then
     BUILD_NUMBER_EXT=.A1
     FAILSAFE_WORKAROUND=1
-    BOARD_SETTING=$OEM_SRC_DIR/Platform/Ampere/ComHpcAltPkg/ComHpcAltBoardSettingVRWA.cfg
+    BOARD_SETTING=$OEM_SRC_DIR/Platform/Ampere/AvaAp1Pkg/AvaAp1BoardSettingVRWA.cfg
 else   
     BUILD_NUMBER_EXT=
     FAILSAFE_WORKAROUND=0
-    BOARD_SETTING=$OEM_SRC_DIR/Platform/Ampere/ComHpcAltPkg/ComHpcAltBoardSetting.cfg
+    BOARD_SETTING=$OEM_SRC_DIR/Platform/Ampere/AvaAp1Pkg/AvaAp1BoardSetting.cfg
 fi    
 
 VER=2.04

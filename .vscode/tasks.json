@@ -15,6 +15,14 @@
             "type": "shell",
             "command": "bash make_ComHpcAlt.sh",
             "problemMatcher": [],
+            "group": "build"
+            }
+        },
+        {
+            "label": "makeAvaAp1",
+            "type": "shell",
+            "command": "bash make_AvaAp1.sh",
+            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true

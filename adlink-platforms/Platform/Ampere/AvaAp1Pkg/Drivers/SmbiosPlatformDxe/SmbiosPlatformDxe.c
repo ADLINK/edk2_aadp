@@ -800,7 +800,7 @@ MbIdRead (
   UINTN Val6=0;
   UINTN Val7=0;
 
-  //Read MB ID for identifying ComHpcAlt module version (TYPE1)
+  //Read MB ID for identifying AvaAp1 module version (TYPE1)
   Val6 = GpioReadBit(MB_ID_GPI6);
   Val7 = GpioReadBit(MB_ID_GPI7);
 

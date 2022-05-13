@@ -789,7 +789,7 @@
       NULL|Silicon/Ampere/AmpereSiliconPkg/Library/PlatformUiLib/PlatformManagerUiLib.inf
       NULL|MdeModulePkg/Library/DeviceManagerUiLib/DeviceManagerUiLib.inf
       NULL|MdeModulePkg/Library/BootManagerUiLib/BootManagerUiLib.inf
-      NULL|Platform/Ampere/ComHpcAltPkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf
+      NULL|Platform/Ampere/AvaAp1Pkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf
   }
 
   #
