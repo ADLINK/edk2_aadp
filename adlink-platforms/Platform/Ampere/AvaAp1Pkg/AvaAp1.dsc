@@ -105,8 +105,8 @@
   #
   # Pcie Board
   #
-  BoardPcieLib|adlink-platforms/Library/BoardPcieLib/BoardPcieLib.inf
-
+  BoardPcieLib|Library/BoardPcieLib/BoardPcieLib.inf
+  
   #
   # Boot Maintenance Manager Ui Library
   #
@@ -124,6 +124,9 @@
   RedfishPlatformCredentialLib|Platform/Ampere/JadePkg/Library/RedfishPlatformCredentialLib/RedfishPlatformCredentialLib.inf
   RedfishPlatformHostInterfaceLib|RedfishPkg/Library/PlatformHostInterfaceLibNull/PlatformHostInterfaceLibNull.inf
 !endif
+
+[LibraryClasses.common.DXE_DRIVER]
+  PciSegmentLib|Platform/Ampere/AvaAp1Pkg/Library/PciSegmentLibPci/PciSegmentLibPci.inf
 
 [LibraryClasses.common.DXE_RUNTIME_DRIVER]
   CapsuleLib|MdeModulePkg/Library/DxeCapsuleLibFmp/DxeRuntimeCapsuleLib.inf
