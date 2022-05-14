@@ -13,7 +13,7 @@
 ################################################################################
 [Defines]
   PLATFORM_NAME                  = AvaAp1
-  PLATFORM_GUID                  = BDFD62FB-6372-4475-92D0-7DA694395449
+  PLATFORM_GUID                  = 7787CE84-03ED-444E-9E0F-F8A99C865951
   PLATFORM_VERSION               = 0.1
   DSC_SPECIFICATION              = 0x0001001B
   OUTPUT_DIRECTORY               = Build/AvaAp1
@@ -49,6 +49,14 @@
   # Pcie Board
   #
   BoardPcieLib|Library/BoardPcieLib/BoardPcieLib.inf
+  
+  #
+  # Boot Maintenance Manager Ui Library
+  #
+  BootMaintenanceManagerUiLib|Platform/Ampere/AvaAp1Pkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf
+
+[LibraryClasses.common.DXE_DRIVER]
+  PciSegmentLib|Platform/Ampere/AvaAp1Pkg/Library/PciSegmentLibPci/PciSegmentLibPci.inf
 
 [LibraryClasses.common.DXE_RUNTIME_DRIVER]
   #
