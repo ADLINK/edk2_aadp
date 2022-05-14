@@ -36,6 +36,9 @@
 #define   GET_HEADER_TYPE(x)    (((x) >> 16) & 0x7F)
 #define PRIMARY_BUS_NUMBER_REG  0x18
 
+#define PERICOM_B4_D1_CFG_ADDR	0x2FFFF0408000
+#define PERICOM_B4_D2_CFG_ADDR	0x2FFFF0410000
+
 /**
   Assert the validity of a PCI Segment address.
   A valid PCI Segment address should not contain 1's in bits 28..31 and 48..63.
@@ -976,14 +979,16 @@ PciSegmentRead32 (
       }
 
       if ((HeaderType == 0) || (PrimaryBus != 0)) {
-        Value = 0xFFFFFFFF;
-        DEBUG ((
-          DEBUG_INFO,
-          "  Skip RD32 B%X|D%X PCIe CFG RD: 0x%p return 0xFFFFFFFF\n",
-          GET_BUS_NUM (CfgBase),
-          GET_DEV_NUM (CfgBase),
-          CfgBase
-          ));
+	      if ((Address != PERICOM_B4_D1_CFG_ADDR) && (Address != PERICOM_B4_D2_CFG_ADDR)) { /* Skip disabling Pericom switches */
+          Value = 0xFFFFFFFF;
+          DEBUG ((
+            DEBUG_INFO,
+            "  Skip RD32 B%X|D%X PCIe CFG RD: 0x%p return 0xFFFFFFFF\n",
+            GET_BUS_NUM (CfgBase),
+            GET_DEV_NUM (CfgBase),
+            CfgBase
+            ));
+        }
         return Value;
       }
     }
