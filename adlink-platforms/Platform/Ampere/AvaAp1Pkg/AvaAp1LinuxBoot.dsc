@@ -29,6 +29,7 @@
   DEFINE DEBUG_PRINT_ERROR_LEVEL = 0x8000000F
   DEFINE FIRMWARE_VER            = 2.04.100
   DEFINE EDK2_SKIP_PEICORE       = TRUE
+  DEFINE PLATFORM_CONFIG_UUID    = D614AE99-1C1B-4AFD-9FB3-ABB7FDCCF6CC
 
 !include MdePkg/MdeLibs.dsc.inc
 
@@ -72,6 +73,11 @@
   gAmpereTokenSpaceGuid.PcdSmbiosTables0BiosReleaseDate|"MM/DD/YYYY"
 
 [PcdsFixedAtBuild.common]
+  #
+  # Platform config UUID
+  #
+  gAmpereTokenSpaceGuid.PcdPlatformConfigUuid|"$(PLATFORM_CONFIG_UUID)"
+
   gAmpereTokenSpaceGuid.PcdSmbiosTables1MajorVersion|$(MAJOR_VER)
   gAmpereTokenSpaceGuid.PcdSmbiosTables1MinorVersion|$(MINOR_VER)
 

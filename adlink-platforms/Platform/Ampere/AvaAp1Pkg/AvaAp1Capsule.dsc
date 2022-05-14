@@ -13,7 +13,7 @@
 ################################################################################
 [Defines]
   PLATFORM_NAME                  = AvaAp1
-  PLATFORM_GUID                  = 34C87B13-434A-4767-88FB-2D0CD2AED46F
+  PLATFORM_GUID                  = 7787CE84-03ED-444E-9E0F-F8A99C865951
   PLATFORM_VERSION               = 0.1
   DSC_SPECIFICATION              = 0x0001001B
   OUTPUT_DIRECTORY               = Build/AvaAp1
