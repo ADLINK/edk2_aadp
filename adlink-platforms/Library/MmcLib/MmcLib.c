@@ -20,17 +20,47 @@ MmcPostCode (
   IN UINT32  Value
   )
 {
-  UINTN   numofbytes;
+  UINTN   NumberOfBytes;
   UINT8   IpmiCmdBuf[] = {"[C0 00 80 11]\r\n"};
   UINTN   IpmiCmdBufSize = sizeof(IpmiCmdBuf);
 
   AsciiSPrint ((CHAR8 *)IpmiCmdBuf, sizeof(IpmiCmdBuf), "[C0 00 80 %2X]\r\n", (UINT8)Value);
 
-  numofbytes = PL011UartWrite ((UINTN)PcdGet64 (PcdSerialDbgRegisterBase), IpmiCmdBuf, IpmiCmdBufSize);
+  NumberOfBytes = PL011UartWrite ((UINTN)PcdGet64 (PcdSerialDbgRegisterBase), IpmiCmdBuf, IpmiCmdBufSize);
 
-  if (numofbytes == 0) {
+  if (NumberOfBytes == 0) {
     DEBUG ((DEBUG_ERROR, "%a Failed to Write MMC POST code data\n", __FUNCTION__));
-    return EFI_INVALID_PARAMETER;
+    return EFI_NO_RESPONSE;
+  }
+
+  return EFI_SUCCESS;
+}
+
+EFI_STATUS
+MmcFirmwareVersion (
+  IN UINT8 *Buffer,
+  IN UINTN BufferSize
+  )
+{
+  UINTN   NumberOfBytes;
+  UINT8   IpmiCmdBuf[] = {"[18 00 01]\r\n"};
+  UINTN   IpmiCmdBufSize = sizeof(IpmiCmdBuf);
+  // UINT8   Buffer[19];
+
+  NumberOfBytes = PL011UartWrite ((UINTN)PcdGet64 (PcdSerialDbgRegisterBase), IpmiCmdBuf, IpmiCmdBufSize);
+  DEBUG ((DEBUG_INFO, "%a Write bytes = %d\n", __FUNCTION__, NumberOfBytes));
+
+  if (NumberOfBytes == 0) {
+    DEBUG ((DEBUG_ERROR, "%a Failed to Get MMC Version\n", __FUNCTION__));
+    return EFI_NO_RESPONSE;
+  }
+
+  NumberOfBytes = PL011UartRead ((UINTN)PcdGet64 (PcdSerialDbgRegisterBase), Buffer, BufferSize);
+  DEBUG ((DEBUG_INFO, "%a Read bytes = %d\n", __FUNCTION__, NumberOfBytes));
+
+  if (NumberOfBytes == 0) {
+    DEBUG ((DEBUG_ERROR, "%a Failed to Get MMC Version\n", __FUNCTION__));
+    return EFI_NO_RESPONSE;
   }
 
   return EFI_SUCCESS;
