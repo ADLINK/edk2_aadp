@@ -283,7 +283,7 @@
 
 [PcdsDynamicExDefault.common.DEFAULT]
   gEfiSignedCapsulePkgTokenSpaceGuid.PcdEdkiiSystemFirmwareImageDescriptor|{0x0}|VOID*|0x100
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSystemFmpCapsuleImageTypeIdGuid|{0x31, 0xca, 0x8b, 0xf0, 0x2e, 0x54, 0xea, 0x4c, 0x8b, 0x48, 0x8e, 0x54, 0xf9, 0x42, 0x25, 0x94}
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSystemFmpCapsuleImageTypeIdGuid|{0xb7, 0xd0, 0xcd, 0xcd, 0xfb, 0x8a, 0x83, 0x48, 0x85, 0x3a, 0xae, 0x93, 0x98, 0x07, 0x7a, 0x0e}
   gEfiSignedCapsulePkgTokenSpaceGuid.PcdEdkiiSystemFirmwareFileGuid|{0xed, 0x06, 0x1c, 0x43, 0xe2, 0x4f, 0x8f, 0x43, 0x98, 0xa3, 0xa9, 0xb1, 0xfd, 0x92, 0x30, 0x19}
 
 [PcdsPatchableInModule]
@@ -340,6 +340,8 @@
   ArmPkg/Universal/Smbios/SmbiosMiscDxe/SmbiosMiscDxe.inf
   Platform/Ampere/ComHpcAltPkg/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
   Silicon/Ampere/AmpereSiliconPkg/Drivers/SmbiosBlobsTransferDxe/SmbiosBlobsTransferDxe.inf
+  Platform/Ampere/ComHpcAltPkg/Drivers/SmbiosCpuDxe/SmbiosCpuDxe.inf
+  Platform/Ampere/ComHpcAltPkg/Drivers/SmbiosMemInfoDxe/SmbiosMemInfoDxe.inf
 
   #
   # Firmware Capsule Update

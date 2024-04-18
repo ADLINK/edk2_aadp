@@ -225,7 +225,9 @@ STATIC ARM_TYPE1 mArmDefaultType1 = {
     ADDITIONAL_STR_INDEX_2,                                                     // Product Name
     ADDITIONAL_STR_INDEX_3,                                                     // Version
     ADDITIONAL_STR_INDEX_4,                                                     // Serial Number
-    { 0x12345678, 0x9ABC, 0xDEFF, { 0x12,0x34,0x56,0x78,0x9A,0xBC,0xDE,0xFF }}, // UUID
+    //><ADLINK-MS20240103>//
+	{ 0x3db14702, 0x4037, 0x4797, { 0x8e,0x28,0x23,0x64,0xcd,0xe3,0x7e,0x3e }}, // UUID
+	//><ADLINK-MS20233010>//
     SystemWakeupTypePowerSwitch,                                                // Wakeup type
     ADDITIONAL_STR_INDEX_5,                                                     // SKU Number
     ADDITIONAL_STR_INDEX_6,                                                     // Family
@@ -647,9 +649,9 @@ STATIC ARM_TYPE41 mArmDefaultType41 = {
 
 STATIC CONST VOID *DefaultCommonTables[] =
 {
-  &mArmDefaultType0,
-  &mArmDefaultType1,
-  &mArmDefaultType2,
+  //&mArmDefaultType0,
+  //&mArmDefaultType1,
+  //&mArmDefaultType2,
   &mArmDefaultType8Vga,
   &mArmDefaultType8USBFront,
   &mArmDefaultType8USBRear,

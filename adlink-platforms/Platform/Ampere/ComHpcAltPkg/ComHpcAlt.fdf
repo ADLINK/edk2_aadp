@@ -409,6 +409,8 @@ APRIORI DXE {
   INF ArmPkg/Universal/Smbios/SmbiosMiscDxe/SmbiosMiscDxe.inf
   INF Platform/Ampere/ComHpcAltPkg/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
   INF Silicon/Ampere/AmpereSiliconPkg/Drivers/SmbiosBlobsTransferDxe/SmbiosBlobsTransferDxe.inf
+  INF Platform/Ampere/ComHpcAltPkg/Drivers/SmbiosCpuDxe/SmbiosCpuDxe.inf
+  INF Platform/Ampere/ComHpcAltPkg/Drivers/SmbiosMemInfoDxe/SmbiosMemInfoDxe.inf
 
   #
   # Firmware Capsule Update
